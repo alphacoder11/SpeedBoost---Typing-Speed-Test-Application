@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeedBoost - Typing Speed Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='new_ui.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Promo Bar -->
+    <div class="promo-bar">
+        <div class="promo-content">
+            <span class="promo-text">SpeedBoost is just the beginning. Master your typing skills and boost your productivity.</span>
+            <a href="#" class="promo-link">Learn More →</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-left">
+            <div class="logo">⚡</div>
+            <span class="logo-text">SpeedBoost <span class="powered-by">typing accelerator</span></span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item">Features</a>
+            <div class="dropdown">
+                <a href="#" class="nav-item">Practice <span class="arrow"></span></a>
+                <div class="dropdown-content">
+                    <a href="#">Beginner</a>
+                    <a href="#">Advanced</a>
+                </div>
+            </div>
+            <a href="#" class="nav-item">Statistics</a>
+            <div class="dropdown">
+                <a href="#" class="nav-item">Resources <span class="arrow"></span></a>
+                <div class="dropdown-content">
+                    <a href="#">Tips</a>
+                    <a href="#">Tutorials</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="nav-item">Community <span class="arrow"></span></a>
+                <div class="dropdown-content">
+                    <a href="#">Leaderboard</a>
+                    <a href="#">Challenges</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="nav-item">About <span class="arrow"></span></a>
+                <div class="dropdown-content">
+                    <a href="#">How it Works</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Background Letters -->
+        <div class="background-letters">
+            <span class="letter">O</span>
+            <span class="letter">A</span>
+            <span class="letter">K</span>
+            <span class="letter">C</span>
+            <span class="letter">S</span>
+            <span class="letter">G</span>
+            <span class="letter">E</span>
+        </div>
+
+        <div class="test-container">
+            <h1 class="page-title">Test your typing skills</h1>
+
+            <!-- Username Section -->
+            <div class="username-section">
+                <input id="username" type="text" class="username-input" placeholder="Enter your name" />
+            </div>
+
+            <!-- Metrics -->
+            <div class="metrics-container">
+                <div class="metric-card timer">
+                    <div class="metric-value" id="timer">60</div>
+                    <div class="metric-label">seconds</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="wpm">0</div>
+                    <div class="metric-label">words/min</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="accuracy">0</div>
+                    <div class="metric-label">chars/min</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="accuracy-percent">0</div>
+                    <div class="metric-label">% accuracy</div>
+                </div>
+            </div>
+
+            <!-- Typing Section -->
+            <div class="typing-section">
+                <div id="text-display" class="text-display">Start typing</div>
+                <textarea id="text-input" class="typing-input" placeholder="Start typing..." disabled></textarea>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="start-btn" class="btn-action btn-start">Start Test</button>
+                <button id="reset-btn" class="btn-action btn-reset">Reset</button>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="leaderboard-section">
+                <h2 class="leaderboard-title">🏆 Leaderboard</h2>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>WPM</th>
+                            <th>Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
